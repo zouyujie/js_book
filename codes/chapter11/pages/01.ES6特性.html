@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 01 -------------------箭头函数------------------
+    // ES5
+    var add = function (a, b) {
+        return a + b;
+    };
+    // 使用箭头函数
+    var add = (a, b) => a + b;
+
+    // ES5
+    var arr1 = ['剑惊风', '无痕公子', '霸刀'];
+    arr1.forEach(function (n) {
+        console.log('[' + n + ']');
+    });
+    // ES6 
+    arr1.forEach(n => {
+        console.log('[' + n + ']');
+    });
+
+    // 02 -------------------var let------------------
+
+    var str = "始皇帝死而地分";
+    {
+        var name = "天行九歌";
+        let msg = "荧惑守心";
+    }
+    console.log(str);//始皇帝死而地分
+    console.log(name);//天行九歌
+    // console.log(msg);//ReferenceError: msg is not defined
+
+    const MSG = "秦时明月";
+    // MSG = "百步飞剑";//Assignment to constant variable.
+
+    // 03 -------------------模板字符串------------------
+    console.log('《' + MSG + '》之' + name);//《秦时明月》之天行九歌
+    console.log(`《${MSG}》之${name}`);//《秦时明月》之天行九歌
+
+    // 04 -------------------函数的参数默认值------------------
+    function fun(name = '卫庄') {
+        console.log(name);
+    }
+    fun();//卫庄
+    fun('盖聂');//盖聂
+
+    // 05 -------------------延展操作符(Spread operator)------------------
+    function fun1(x, y, z) {
+        console.log(x, y, z);
+    }
+
+    let arr = ['东皇太一', '月神', '星魂'];
+    fun1(...arr); // 东皇太一 月神 星魂
+
+    function fun2(...args) {
+        console.log(args);
+    }
+    fun2('东皇太一', '月神', '星魂'); //  ["东皇太一", "月神", "星魂"]
+
+    // 06 -------------------对象解构------------------
+    // ES5
+    var user = {
+        username: '胜七',
+        age: 30
+    }
+    console.log(user.username + user.age); //胜七30
+
+    // ES6
+    const { username, age } = user;
+    console.log(username + age);//胜七30
+
+    // 07 ------------------- for...of 和 for...in------------------
+    let arr2 = ['典庆', '梅三娘'];
+    for (let item of arr2) {
+        console.log(item);
+    }
+    //典庆
+    //梅三娘
+
+    let userInfo = {
+        name: '鬼谷子',
+        book: '奇门鬼谷'
+    }
+    for (let key in userInfo) {
+        console.log(key + ':' + userInfo[key]);
+    }
+    // name:鬼谷子
+    // book:奇门鬼谷
+
+    // 08 ------------------- 对象属性简写------------------
+    const userName = '欧阳春', ageVal = 32, nickName = '北侠';
+
+    const userObj = {
+        userName: userName,
+        ageVal: ageVal,
+        nickName: nickName
+    };
+    console.log(userObj);//{userName: "欧阳春", ageVal: 32, nickName: "北侠"}
+
+    // ES6简写
+    const userNewObj = {
+        userName,
+        ageVal,
+        nickName
+    };
+    console.log(userNewObj);//{userName: "欧阳春", ageVal: 32, nickName: "北侠"}
+
+</script>
+
+</html>

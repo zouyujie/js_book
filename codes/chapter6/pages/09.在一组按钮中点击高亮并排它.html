@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="漩涡鸣人" />
+    <input type="button" value="日向宁次" />
+    <input type="button" value="李洛克" />
+    <input type="button" value="我爱罗" />
+    <script>
+        //获取所有的按钮，分别注册点击事件
+        var btnObjs = document.getElementsByTagName("input");
+        //循环遍历所有的按钮
+        for (var i = 0; i < btnObjs.length; i++) {
+            //为每个按钮都注册点击事件
+            btnObjs[i].onclick = function () {
+                //把所有按钮的class属性设置为默认的值''
+                for (var j = 0; j < btnObjs.length; j++) {
+                    btnObjs[j].className = "";
+                }
+                //当前被点击按钮的class属性设置为active
+                this.className = "active";
+            };
+        }
+    </script>
+</body>
+
+</html>

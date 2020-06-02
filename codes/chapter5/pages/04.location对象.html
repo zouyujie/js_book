@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //地址栏上#及后面的内容
+        console.log(window.location.hash);
+        //主机名及端口号
+        console.log(window.location.host);
+        //主机名
+        console.log(window.location.hostname);
+        //文件的路径---相对路径
+        console.log(window.location.pathname);
+        //端口号
+        console.log(window.location.port);
+        //协议
+        console.log(window.location.protocol);
+        //搜索的内容
+        console.log(window.location.search);
+    </script>
+    <input type="button" value="页面跳转" onclick="goToPage()" />
+    <script>
+        function goToPage() {
+            window.location = 'https://www.cnblogs.com/jiekzou/';
+        }
+    </script>
+
+    <!-- 对指定iframe框架进行跳转页面 -->
+    <input type="button" value="iframe跳转" onclick="goToIframe()" />
+    <iframe src="" id="mainFrame" name="mainFrame" style="width:100%;height:600px"></iframe>
+    <script>
+        function goToIframe() {
+            parent.mainFrame.location = "https://www.cnblogs.com/jiekzou/";
+        }
+    </script>
+
+    <input type="button" value="页面跳转传参" onclick="goToPageWithParams()" />
+    <script>
+        function goToPageWithParams() {
+            window.location = './05.接收参数.html?name=yujie&job=程序员';
+        }
+    </script>
+    <script>
+        console.log(location);
+        console.dir(location);
+    </script>
+</body>
+
+</html>

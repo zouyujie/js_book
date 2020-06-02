@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 创建对象
+    // var student = {};
+    // var student = new Object();
+
+    var student = {
+        name: '邹宇峰',
+        age: 5
+    };
+    var name = student.name;//对象取值
+    console.log('name :', name);  //name : 邹宇峰
+
+    student.age = 6; //对象赋值
+    console.log('age :', student.age);//age : 6
+
+    var name2 = student['name'];
+    console.log('name2 :', name2);//name2 : 邹宇峰
+
+    for (var k in student) {
+        console.log('属性名 :', k, '属性值：', student[k]);
+    }
+    // 属性名 : name 属性值： 邹宇峰
+    // 属性名 : age 属性值： 6
+
+</script>
+
+</html>

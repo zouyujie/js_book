@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //人的构造函数
+      function Person(job, motto) {
+        this.job = job;
+        if (motto) {
+          this.motto = motto;
+        }
+      }
+      //人的原型对象方法
+      Person.prototype.motto = '王侯将相宁有种乎';
+      var per = new Person('农民', '皇帝轮流做，今天到我家');
+      console.log(per.motto);
+      console.log(per.age);
+
+      //   var per1 = new Person('亭长');
+      //   per1.motto = '大丈夫当如是耳！';
+      //   console.log(per1);
+
+      Person.prototype.motto = '大丈夫当如是耳！';
+      var per2 = new Person('亭长');
+      console.log(per2);
+      console.log(per2.motto);
+    </script>
+  </body>
+</html>

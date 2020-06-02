@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function getNum(val, time) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(() => {
+                    resolve(val)
+                }, time);
+            })
+        }
+        // function doTest() {
+        //     let arr = [getNum(1, 2000), getNum(2, 1000)];
+        //     for (let item of arr) {
+        //         console.log(Date.now(), item.then(res => {
+        //             console.log(res);
+        //         }))
+        //     }
+        // }
+
+        async function doTest() {
+            let arr = [getNum(1, 2000), getNum(2, 1000)];
+            for await (let item of arr) {
+                console.log(Date.now(), item)
+            }
+        }
+        doTest();
+
+        const arr1 = [10, 20, 30];
+        const copy = [...arr1]; // 复制
+        console.log(copy);    // [10, 20, 30]
+        const arr2 = [40, 50];
+        const merge = [...arr1, ...arr2]; // 合并
+        console.log(merge);    // [10, 20, 30, 40, 50]
+        console.log(Math.max(...arr1));    // 30 拆解
+
+        // let skills = {
+        //     skill1: '独孤九剑',
+        //     skill2: '吸星大法',
+        //     school: '其它'
+        // }
+        // let user = {
+        //     name: '令狐冲',
+        //     muisc: '沧海一声笑',
+        //     ...skills,
+        //     school: '华山派'
+        // }
+        // // console.log('user :', user);
+        // //user : {name: "令狐冲", muisc: "沧海一声笑", skill1: "独孤九剑", skill2: "吸星大法", school: "华山派"}
+
+        // skills.skill1 = '易筋经';
+        // console.log('user :', user);
+
+
+        let skills = {
+            skill1: '独孤九剑',
+            skill2: '吸星大法',
+            school: '其它',
+            girls: { name: '任盈盈', school: '日月神教' }
+        }
+        let user = {
+            name: '令狐冲',
+            muisc: '沧海一声笑',
+            ...skills,
+            school: '华山派'
+        }
+        skills.girls.school = '退出江湖';
+        console.log('user :', user);
+
+
+        new Promise((resolve, reject) => {
+            resolve('成功');
+        }).then((response) => {
+            console.log(response);
+        })
+            .catch((error) => {
+                console.log(error);
+            })
+            .finally(() => {
+                //无论成功还是失败都要执行的代码
+                console.log('你在他乡还好吗')
+            });
+    </script>
+</body>
+
+</html>

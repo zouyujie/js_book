@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content"></div>
+    <input type="text" name="username" />
+    <div class="main"></div>
+
+    <div id="age"></div>
+    <span class="box"></span>
+
+    <script>
+        // 根据name获取元素
+        var div = document.getElementById('content');
+        console.log(div);//<div id="content"></div>
+        console.dir(div);
+
+        var inputs = document.getElementsByName('username');
+        for (var i = 0; i < inputs.length; i++) {
+            var input = inputs[i];
+            console.log(input);//<input type="text" name="username">
+        }
+        // 根据类名获取元素
+        var mains = document.getElementsByClassName('main');
+        for (var i = 0; i < mains.length; i++) {
+            var main = mains[i];
+            console.log(main);// <div class="main"></div>
+        }
+
+        // 根据选择器获取元素
+        var age = document.querySelector('#age');
+        console.log(age);
+
+        var boxes = document.querySelectorAll('.box');
+        for (var i = 0; i < boxes.length; i++) {
+            var box = boxes[i];
+            console.log(box);
+        }
+
+        // 根据标签名获取元素
+        var divs = document.getElementsByTagName('div');
+        for (var i = 0; i < divs.length; i++) {
+            var div = divs[i];
+            console.log(div);
+        }
+    </script>
+</body>
+
+</html>

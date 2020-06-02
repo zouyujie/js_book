@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var re = /[0-9]+/g;
+        var str = '2020-04-25';
+        var result = re[Symbol.matchAll](str);
+        // var result = str.matchAll(re);和 re[Symbol.matchAll](str)等价
+        console.log(Array.from(result, x => x[0]));// ["2020", "04", "25"]
+
+        const valNumber = 27;
+        const valBigInt = BigInt(valNumber);
+        console.log(valBigInt === 27n); // true
+        console.log(typeof valBigInt === 'bigint'); // true
+        console.log(typeof 27); // number
+        console.log(typeof 27n); // bigint
+
+        const object = { 刀: '北饮狂刀聂人王', 剑: '南麟剑首断帅' };
+        const objToMap = Object.entries(object);
+        console.log(objToMap); //[["刀", "北饮狂刀聂人王"],["剑", "南麟剑首断帅"]];
+        const mapToObj = Object.fromEntries(objToMap);
+        console.log(mapToObj); //{刀: "北饮狂刀聂人王", 剑: "南麟剑首断帅"}
+
+        console.log(Symbol('剑魔').description);  // 剑魔
+        console.log(Symbol('').description);     // 
+        console.log(Symbol().description);       // undefined
+
+        function sum(a, b) {
+            return a + b;
+        }
+        console.log(sum.toString());
+        // function sum(a, b) {
+        //     return a + b;
+        // }
+    </script>
+</body>
+
+</html>

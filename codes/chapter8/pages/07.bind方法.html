@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, msg) {
+        this.name = name;
+        this.msg = msg;
+      }
+      //通过原型添加方法
+      Person.prototype.say = function(dynasty) {
+        console.log(dynasty + this.name + '说：' + this.msg);
+      };
+      var per = new Person('王夫之', '清风有意难留我，明月无心自照人');
+      per.say('清代');
+
+      console.log('--------------分割线----------------');
+      function Student(name, msg) {
+        this.name = name;
+        this.msg = msg;
+      }
+      var stu = new Student('范仲淹', '先天下之忧而忧');
+      var fun = per.say.bind(stu, '北宋'); //复制一份，绑定时传参，此时say中的this是stu
+      fun();
+      var fun2 = per.say.bind(stu);
+      fun2('北宋'); //调用时传参
+    </script>
+  </body>
+</html>

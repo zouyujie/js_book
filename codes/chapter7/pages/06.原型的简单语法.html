@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 忍者
+      function Ninja(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      // 所有的忍者都具备的技能
+      //   Ninja.prototype.skill = '体术';
+      //   Ninja.prototype.fight = function() {
+      //     console.log('扔手里剑');
+      //   };
+      Ninja.prototype = {
+        //手动修改构造器的指向
+        constructor: Ninja,
+        skill: '体术',
+        fight: function() {
+          console.log('扔手里剑');
+          this.eat();
+        },
+        eat: () => {
+          console.log('吃一乐拉面');
+        }
+      };
+      var chutian = new Ninja('雏田', 21);
+      chutian.fight();
+      console.dir(Ninja);
+    </script>
+  </body>
+</html>

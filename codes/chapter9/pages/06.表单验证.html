@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #ccc;
+      }
+      label {
+        width: 50px;
+        display: inline-block;
+      }
+      span {
+        color: red;
+        padding-left: 5px;
+      }
+      .container {
+        margin: 100px auto;
+        width: 400px;
+        padding: 0px 50px 50px 50px;
+        line-height: 40px;
+        border: 1px solid #999;
+        background: #efefef;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>个人资料</h3>
+      <div>
+        <label>姓名：</label><input type="text" id="fullName" /><span></span>
+      </div>
+      <div>
+        <label for="job">职业：</label
+        ><input type="text" id="job" /><span></span>
+      </div>
+      <div>
+        <label for="qq">Q Q：</label><input type="text" id="qq" /><span></span>
+      </div>
+      <div>
+        <label>手机：</label><input type="text" id="phone" /><span></span>
+      </div>
+      <div>
+        <label>邮箱：</label><input type="text" id="e-mail" /><span></span>
+      </div>
+    </div>
+    <script>
+      function my(id) {
+        return document.getElementById(id);
+      }
+      function validateInput(input, reg, msg) {
+        //文本框注册失去焦点的事件
+        input.onblur = function() {
+          if (reg.test(this.value)) {
+            this.nextElementSibling.innerText = '√';
+            this.nextElementSibling.style.color = 'green';
+          } else {
+            this.nextElementSibling.innerText = msg;
+            this.nextElementSibling.style.color = 'red';
+          }
+        };
+      }
+      //中文名字：2-6个中文字符
+      validateInput(
+        my('fullName'),
+        /^[\u4e00-\u9fa5]{2,6}$/,
+        '请输入正确的姓名'
+      );
+      //职业：2-16个中文字符
+      validateInput(
+        my('job'),
+        /^[\u4e00-\u9fa5]{2,16}$/,
+        '请输入正确的职业信息'
+      );
+      //qq的
+      validateInput(my('qq'), /^\d{5,11}$/, '请输入正确的QQ格式');
+      //手机
+      validateInput(my('phone'), /^\d{11}$/, '请输入正确的手机号码');
+      //邮箱
+      validateInput(
+        my('e-mail'),
+        /^[0-9a-zA-Z_.-]+[@][0-9a-zA-Z_.-]+([.][a-zA-Z]+){1,2}$/,
+        '请输入正确的邮箱格式'
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      if (true) {
+        var name = '毛泽东';
+      }
+      //   console.log(name); // 毛泽东
+      function fun() {
+        var verse = '惜秦皇汉武，略输文采；';
+      }
+      //   console.log(verse); //Uncaught ReferenceError: verse is not defined
+
+      var num = 10; //作用域链 级别:0
+      var str = 'abc';
+      function f1() {
+        var num = 20; //作用域链 级别:1
+        function f2() {
+          var num = 30; //作用域链 级别:2
+          console.log(num);
+        }
+        f2();
+      }
+      f1(); //30
+
+      //变量的提升
+      //   console.log(age); //age is not defined
+      console.log(score); //undefined  变量的声明提升了，但是变量赋值没有提升
+      var score = 98;
+
+      //函数的声明被提前了
+      fun1();
+      function fun1() {
+        console.log('唐宗宋祖，稍逊风骚');
+      }
+
+      var fun2;
+      //   fun2(); //fun2 is not a function
+      fun2 = function() {
+        console.log('一代天骄，成吉思汗，只识弯弓射大雕');
+      };
+      fun2();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 写在script标签中 -->
+    <script>
+        alert('我就是这条街最靓的崽!');
+    </script>
+    <!-- 写在外部js文件中，在页面引入 -->
+    <script src="../scripts/1.js"></script>
+
+    <!-- <script src="../scripts/1.js">  alert('不会执行');</script> -->
+    <script>
+        alert(走路大摇大摆) //报错
+        alert('我是最大的牌');//不会执行
+    </script>
+    <!-- 正常运行 -->
+    <script>alert('一起摇摆');</script>
+    <!-- 标准写法 -->
+    <script type="text/javascript"></script>
+    <script lang="JavaScript"></script>
+    <script type="text/javascript" lang="JavaScript"></script>
+</head>
+
+<body>
+    <!-- 写在行内 -->
+    <input type="button" value="最靓的崽" onclick="alert('我就是这条街最靓的崽!')" />
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //1.字面量创建
+    var obj = {
+        name: "楚留香",
+        age: 32,
+        identity: "盗帅",
+        skill: function () {
+            console.log("弹指神功")
+        }
+    }
+    //2.new Object()创建对象
+    var user = new Object();
+    user.name = '陆小凤';
+    user.age = 35;
+    user.identity = '大侠';
+    user.skill = function () {
+        console.log('灵犀一指');
+    }
+    // 3.工厂函数创建对象
+    function createPerson(name, age, identity) {
+        var person = new Object();
+        person.name = name;
+        person.age = age;
+        person.identity = identity;
+        person.skill = function () {
+            console.log('天外飞仙');
+        }
+        return person;
+    }
+    var per = createPerson('叶孤城', 32, '白云城主');
+    // 4.自定义构造函数
+    function Person(name, age, identity) {
+        this.name = name;
+        this.age = age;
+        this.identity = identity;
+        this.skill = function () {
+            console.log('夺命十三剑');
+        }
+    }
+    var person = new Person('燕十三', 27, '剑客');
+
+    var baseObj = {};
+    baseObj.name = "诗"; //字符串类型
+    //方法
+    baseObj.say = function () {
+        console.log('韶华易逝，莫负流年');
+    }
+    console.log(baseObj["name"]);//诗
+</script>
+
+</html>

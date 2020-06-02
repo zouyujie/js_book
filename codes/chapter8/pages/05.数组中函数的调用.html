@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [
+        function() {
+          console.log('天宝说：我命由我不由天');
+        },
+        function() {
+          console.log('每个人都想成为君宝，最后却活成了天宝');
+        }
+      ];
+      //回调函数：函数作为参数使用
+      arr.forEach(function(ele) {
+        ele();
+      });
+    </script>
+  </body>
+</html>

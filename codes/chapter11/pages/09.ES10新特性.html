@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr1 = ['大海无量', '剑二十二', ['三分归元气', '蚀日剑法']];
+        console.log(arr1.flat()); // ["大海无量", "剑二十二", "三分归元气", "蚀日剑法"]
+        var arr2 = ['万剑归宗', ['摩柯无量', '傲寒六诀', ['天霜拳', '排云掌']]];
+        console.log(arr2.flat()); //["万剑归宗", "摩柯无量", "傲寒六诀",  ['天霜拳', '排云掌']]
+        var arr3 = ['万剑归宗', ['摩柯无量', '傲寒六诀', ['天霜拳', '排云掌']]];
+        console.log(arr3.flat(2));//["万剑归宗", "摩柯无量", "傲寒六诀", "天霜拳", "排云掌"]
+        //使用 Infinity，可展开任意深度的嵌套数组
+        console.log(arr3.flat(Infinity));//["万剑归宗", "摩柯无量", "傲寒六诀", "天霜拳", "排云掌"]
+
+        var arr4 = ['第一邪皇', , '第二猪皇'];
+        console.log(arr4.flat());//["第一邪皇", "第二猪皇"]
+
+        // Array.prototype.flatMap()
+        let arr5 = ['秦霜', '步惊云', '聂风'];
+        console.log(arr5.map((n, index) => [index + 1 + '.' + n]));  //[Array(1), Array(1), Array(1)]
+        console.log(arr5.flatMap((n, index) => [index + 1 + '.' + n]));// ["1.秦霜", "2.步惊云", "3.聂风"]
+        console.log(arr5.flatMap((n, index) => [[index + 1 + '.' + n]]));//[Array(1), Array(1), Array(1)]
+    </script>
+</body>
+
+</html>

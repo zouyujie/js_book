@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Person(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+      }
+      //通过原型添加方法，实现数据共享
+      Person.prototype.fight = function() {
+        console.log('使用螺旋丸');
+      };
+      var mingren = new Person('漩涡鸣人', 35, '男');
+      var boren = new Person('漩涡博人', 10, '男');
+      console.log(mingren.fight == boren.fight); //true
+      console.dir(Person);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.函数式声明
+      fun1(); //正常
+      function fun1() {
+        console.log('运行函数fun1');
+      }
+      fun1(); //调用方法
+      //2.函数表达式的形式定义函数
+      //   func2(); //报错
+      var fun2 = function() {
+        console.log('运行函数fun2');
+      };
+      fun2(); //调用方法
+
+      //3.new Function()
+      //示例1
+      var sumFunc = new Function('x', 'y', 'return x+y'); //通过构造函数来克隆函数结构
+      console.log(sumFunc(1, 1)); //2
+      //示例2
+      var f = new Function(); //定义空函数
+      //示例3
+      var f1 = new Function('num1', 'num2', 'num3', 'return num1+num2+num3');
+      var f2 = new Function('num1,num2, num3', 'return  num1+num2+num3');
+      var f3 = new Function('num1,num2', 'num3', 'return  num1+num2+num3');
+    </script>
+  </body>
+</html>

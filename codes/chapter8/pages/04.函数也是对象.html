@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fun() {}
+      console.dir(fun);
+
+      console.dir(Date);
+      console.dir(Math); //有__proto__，但是没有prototype
+
+      var fun1 = new Function('x', 'y', 'return x+y');
+      var fun2 = function(x, y) {
+        return x + y;
+      };
+      console.log(fun1(1, 2), fun2(1, 2));
+      console.dir(fun1);
+      console.dir(fun2);
+      console.log(fun1.__proto__ == fun2.__proto__); //true
+      console.log(fun1.__proto__ == Function.prototype); //true
+    </script>
+  </body>
+</html>

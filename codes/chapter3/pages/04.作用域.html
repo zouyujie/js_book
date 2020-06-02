@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //---------------全局变量------------------
+    var day = "2020-03-15";
+    {
+        var num = 10;
+        console.log(day);//2020-03-15
+    }
+    console.log(num);//10
+
+    if (true) {
+        var name = "金竹山";
+    }
+    console.log(name);//金竹山
+
+    for (var i = 0; i < 1; i++) {
+        var week = "星期一";
+    }
+    console.log(week);//星期一
+    //---------------隐式全局变量------------------
+    function f1() {
+        number = 27; //隐式全局变量
+    }
+    f1();
+    console.log(number);//27
+
+    var num1 = 1;
+    num2 = 2;
+    delete num1;//把num1删除了
+    delete num2;//把num2删除了
+    console.log(typeof num1);//number
+    console.log(num1 + 10); //11
+    console.log(typeof num2);//undefined
+    //---------------局部变量------------------
+    function fn() {
+        var book = "Vue.js 2.x实践指南";
+    }
+    // console.log(book); //Uncaught ReferenceError: book is not defined
+    //---------------词法作用域------------------
+    var msg = "他是横空出世的英雄";
+    var nextMsg = "他有海阔天空的心胸";
+    function sing() {
+        var nextMsg = "他是盖世无双的侠客";
+        console.log(msg);
+        console.log(nextMsg);
+    }
+    sing();
+    //他是横空出世的英雄
+    // 他是盖世无双的侠客
+
+
+
+</script>
+
+</html>

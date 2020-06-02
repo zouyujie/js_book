@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //#region 1.字面量的方式
+      var weixiaobao = {
+        name: '韦小宝',
+        age: 13,
+        identity: '天地会香主、神龙岛白龙使、大清一等子爵',
+        eat: function() {
+          console.log('吃烧鸡');
+        },
+        drink: function() {
+          console.log('喝扬州女儿红');
+        }
+      };
+      //#endregion
+      //#region 2.调用系统的构造函数
+      var chenjinnan = new Object();
+      chenjinnan.name = '陈近南';
+      chenjinnan.age = 30;
+      chenjinnan.identity = '天地会总舵主';
+      chenjinnan.doWork = function() {
+        console.log('反清复明');
+      };
+      //#endregion
+      //#region 3.自定义构造函数
+      function Person(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.fight = function() {
+          console.log('使出化骨绵掌');
+        };
+      }
+      // 创建对象:实例化一个对象的同时对属性进行初始化
+      var haidafu = new Person('海大富', 50, '不男不女');
+      //#endregion
+      // 对象类型
+      console.log(weixiaobao instanceof Object); //true
+      console.log(chenjinnan instanceof Object); //true
+      console.log(haidafu instanceof Person); //true
+
+      console.dir(Person);
+      console.dir(haidafu);
+
+      console.log(haidafu.constructor == Person); //ture
+      console.log(haidafu.__proto__.constructor == Person); //ture
+      console.log(
+        haidafu.__proto__.constructor == Person.prototype.constructor
+      ); //ture
+    </script>
+  </body>
+</html>

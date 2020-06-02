@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="点我吧" id="btn" />
+</body>
+<script>
+
+    function show() {
+        document.write('传说中他有着绝对精彩和浪漫的身手')
+    }
+    document.getElementById("btn").onclick = show;
+
+
+    function post(url, data, fn) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url, true);
+        // 添加http头，发送信息至服务器时内容编码类型
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 304)) {
+                fn.call(this, xhr.responseText); //执行回调
+            }
+        };
+        xhr.send(data);
+    }
+
+    function fun(name, callback) {
+        setTimeout(function () {
+            callback(name, b);
+        }, 300);
+    }
+    function a(name, callback) {
+        setTimeout(function () {
+            console.log(name);
+            callback('b', c);
+        }, 300);
+    }
+    function b(name, callback) {
+        setTimeout(function () {
+            console.log(name);
+            callback('c')
+        }, 300);
+    }
+    function c(name) {
+        setTimeout(function () {
+            console.log(name);
+        }, 300);
+    }
+    fun('a', a);
+
+
+
+    new Promise(
+        function (resolve, reject) {
+            // 一段耗时的异步操作
+            resolve('成功') // 数据处理完成
+            // reject('失败') // 数据处理出错
+        }
+    ).then(
+        (res) => { console.log(res) },  // 成功
+        (err) => { console.log(err) } // 失败
+    )
+
+    new Promise(resolve => {
+        //模拟异步调用的函数
+        setTimeout(() => {
+            resolve('钟意你')
+        }, 300)
+    }).then(res => {
+        console.log(res)
+    })
+
+    new Promise(resolve => {
+        setTimeout(() => {
+            resolve('1')
+        }, 300)
+    }).then(val => {
+        console.log(val) //  1
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve('2')
+            }, 300)
+        })
+    }).then(val => {
+        console.log(val) // 2
+        return new Promise(resolve => {
+            setTimeout(() => {
+                resolve('3')
+            }, 300)
+        })
+    }).then(val => {
+        console.log(val);//3
+    })
+</script>
+
+</html>

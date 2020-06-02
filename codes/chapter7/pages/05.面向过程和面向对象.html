@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="button" value="变化" id="btn" />
+    <img id="img" src="../imgs/wukong.jpg" style="width:200px;height:120px" />
+    <script>
+      //#region 面向过程
+      //   document.getElementById('btn').onclick = function() {
+      //     if (this.value == '变化') {
+      //       document.getElementById('img').src = '../imgs/niumowang.png';
+      //       this.value = '还原';
+      //     } else {
+      //       document.getElementById('img').src = '../imgs/wukong.jpg';
+      //       this.value = '变化';
+      //     }
+      //   };
+      //#endregion
+      //#region 面向对象
+      function ChangeImg(options) {
+        this.btnObj = options.btnObj;
+        this.imgObj = options.imgObj;
+      }
+      ChangeImg.prototype.init = function() {
+        var that = this;
+        that.btnObj.onclick = function() {
+          if (this.value == '变化') {
+            that.imgObj.src = '../imgs/niumowang.png';
+            this.value = '还原';
+          } else {
+            that.imgObj.src = '../imgs/wukong.jpg';
+            this.value = '变化';
+          }
+        };
+      };
+      // 实例化对象
+      var obj = new ChangeImg({
+        btnObj: document.getElementById('btn'),
+        imgObj: document.getElementById('img')
+      });
+      obj.init(); //调用方法
+      //#endregion
+    </script>
+  </body>
+</html>

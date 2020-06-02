@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    var money = 120000;
+    if (money > 100000) {
+        console.log('愿意嫁');
+    }
+    var age = 35;
+
+    if (age < 18) {
+        console.log('未成年人');
+    } else if (age >= 18 && age < 45) {
+        console.log('青年人');
+    } else if (age >= 45 && age <= 59) {
+        console.log('中年人');
+    }
+    else { //>=60
+        console.log('老年人');
+    }
+
+
+    //判断奇偶数
+    var number = parseInt(prompt("请输入一个数字"));
+    if (number % 2 == 0) { //能被2整除
+        console.log("偶数");
+    } else {
+        console.log("奇数");
+    }
+
+    //两个数字中的最大值
+    var x = 5;
+    var y = 10;
+    var result = x > y ? x : y;
+    console.log(result); //10
+</script>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" id="btn" value="语录" />
+    <script>
+        var btn = document.getElementById('btn');
+        //-----------方式一----------
+        //注册事件
+        btn.onclick = function () {
+            eventCode();
+        };
+        //解绑事件
+        btn.onclick = null;
+
+        //-----------方式二-----------
+        //注册事件
+        btn.addEventListener('click', eventCode, false);
+        //解绑事件
+        btn.removeEventListener('click', eventCode, false);
+        //----------方式三-------------
+        //注册事件
+        btn.attachEvent('onclick', eventCode); //btn.attachEvent is not a function
+        //解绑事件
+        btn.detachEvent('onclick', eventCode);
+
+        function eventCode() {
+            console.log('得到了不该得到的，就会失去不该失去的');
+        }
+
+        //-----------------兼容代码-----------------------
+        //注册事件
+        function addEventListener(element, type, fn) {
+            if (element.addEventListener) {
+                element.addEventListener(type, fn, false);
+            } else if (element.attachEvent) {
+                element.attachEvent('on' + type, fn);
+            } else {
+                element['on' + type] = fn;
+            }
+        }
+        //移除事件
+        function removeEventListener(element, type, fn) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, fn, false);
+            } else if (element.detachEvent) {
+                element.detachEvent('on' + type, fn);
+            } else {
+                element['on' + type] = null;
+            }
+        }
+    </script>
+</body>
+
+</html>

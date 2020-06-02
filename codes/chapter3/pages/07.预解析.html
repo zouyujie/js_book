@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // fun();//undefined ——执行调用
+    // var num = 97;//这个变量的声明会提升到变量使用之前
+    // function fun() {
+    //     console.log(num);
+    // }
+    //-------------预解析后------------------
+    // var num;
+    // function fun() {
+    //     console.log(num);
+    // }
+    // fun();//undefined ——执行调用
+    // num = 97;
+
+    //-------------------------------
+    // var num = 97;
+    // fun();//undefined ——执行调用
+    // function fun() {
+    //     console.log(num);
+    //     var num = 99;//这个变量的声明会提升到变量使用之前
+    // }
+    // console.log(num);//97
+    //-------------预解析后------------------
+
+    // var num = 97;
+    // function fun() {
+    //     var num;
+    //     console.log(num);
+    //     num = 99;
+    // }
+    // fun();//undefined ——执行调用
+    //-------------------------------
+
+</script>
+<script>
+    say();//他有海阔天空的心胸
+    function say() {
+        console.log('他有海阔天空的心胸')
+    }
+</script>
+<script>
+    say();//他是盖世无双的侠客
+    function say() {
+        console.log('他是盖世无双的侠客')
+    }
+</script>
+
+</html>

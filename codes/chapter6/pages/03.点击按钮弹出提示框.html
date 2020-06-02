@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="不分离" onclick="fun()" />
+
+    <input type="button" value="分离" id="btn" />
+    <script>
+        //根据id属性的值从文档中获取这个元素
+        var btnObj = document.getElementById("btn");
+        //为当前的这个按钮元素(对象),注册点击事件,添加事件处理函数(匿名函数)
+        btnObj.onclick = function () {
+            //响应做的事情
+            alert("好色仙人，自来也驾到");
+        };
+
+        function fun() {
+            alert("好色仙人，自来也驾到");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>饮马长城窟行</h3>
+    <div>
+      <p>青青河畔草，绵绵思远道。</p>
+      远道不可思，宿昔梦见之。
+    </div>
+    <script>
+      var root = document.documentElement; //获取页面中的根节点
+      function forDOM(root) {
+        console.log('节点的名字:' + root.nodeName);
+        var children = root.children;
+        forChild(children);
+      }
+      //传入根节点的子节点，把这些子节点中的所有的子节点显示出来
+      function forChild(node) {
+        for (var i = 0; i < node.length; i++) {
+          node[i].children && forDOM(node[i]);
+        }
+      }
+      forDOM(root);
+    </script>
+  </body>
+</html>

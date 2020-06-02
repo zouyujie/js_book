@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 工厂模式创建对象
+      function createObject(name, age, country) {
+        var obj = new Object();
+        obj.name = name;
+        obj.age = age;
+        obj.country = country;
+        obj.fight = function() {
+          console.log('使出百步飞剑');
+        };
+        return obj;
+      }
+      var per = createObject('盖聂', 30, '秦国');
+    </script>
+  </body>
+</html>

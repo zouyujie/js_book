@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //人的构造函数
+      function Person() {
+        this.remark = '人生自古谁无死';
+      }
+      //人的原型对象方法
+      Person.prototype.eat = function() {
+        console.log('民以食为天');
+      };
+      //农民的构造函数
+      function Farmer() {}
+      //农民的原型指向了一个人的实例对象
+      Farmer.prototype = new Person();
+      Farmer.prototype.doWork = function() {
+        console.log('锄禾日当午');
+      };
+      var far = new Farmer();
+      console.dir(Person);
+      far.eat();
+      far.doWork();
+    </script>
+  </body>
+</html>

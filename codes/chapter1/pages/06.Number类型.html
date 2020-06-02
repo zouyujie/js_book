@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    console.log(Number.MAX_VALUE);//数字的最大值
+    console.log(Number.MIN_VALUE);//数字的最小值
+
+    var x = 0.25;
+    var y = 0.21;
+    var sum = x + y;//亚妮？!=0.46
+    console.log('sum :', sum); //sum : 0.45999999999999996
+    console.log(sum == 0.46); // false  
+
+    console.log('Infinity :', Infinity);
+
+    var t1 = 1.7976931348623157E+10308;
+    console.log(t1); //Infinity
+    var t2 = -1.7976931348623157E+10308;
+    console.log(t2);//-Infinity
+
+    console.log(Number('英雄本色')); //NaN
+    var val;
+    console.log(val + 1); //NaN
+
+    console.log(isNaN(10)); //false
+    console.log(isNaN('纵横四海')); //true
+</script>
+
+</html>

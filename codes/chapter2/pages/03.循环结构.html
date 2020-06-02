@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // // 当循环条件为true时，执行循环体，
+    // // 当循环条件为false时，结束循环。
+    // while (循环条件) {
+    //     //循环体
+    // }
+
+    // 计算1-100之间所有数的和
+    // 初始化变量
+    var i = 1;//计数器
+    var sum = 0;
+    // 判断条件
+    while (i <= 100) {
+        // 循环体
+        sum += i;
+        // 计数器自增
+        i++;
+    }
+    console.log(sum); //5050
+    console.log("========================================")
+    // do {
+    //     // 循环体;
+    // } while (循环条件);
+
+    // 求100以内所有4的倍数的和
+    var i = 1;
+    var sum = 0;
+    do {
+        if (i % 4 == 0) {
+            sum += i;
+        }
+        i++;
+    } while (i <= 100);
+    console.log(sum);//1300
+
+    // 问用户:做我女朋友好吗?提示用户请输入y/n ,如果用户不输入y就一直问：做我女朋友好吗?如果用户输入的y，则结束，并提示用户：表白成功
+    do {
+        //把用户输入的结果存储到result变量中
+        var result = prompt("做我女朋友好吗?y/n");
+    } while (result != "y");
+    alert("表白成功");
+    console.log("========================================")
+    // for循环的表达式之间用的是;号分隔的，千万不要写成,
+    for (初始化表达式1; 判断表达式2; 自增表达式3) {
+        // 循环体4
+    }
+</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wiitemh=device-wiitemh, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 细线表格样式 */
+        table {
+            border-collapse: collapse;
+            border: 1px solid #000000;
+            margin-top: 5px;
+        }
+
+        td {
+            border-collapse: collapse;
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="秦时明月武力排名" id="btn" />
+    <div id="div"></div>
+    <script>
+        var divObj = document.getElementById('div');
+        var list = [
+            { name: '盖聂', msg: '被称为天下第一剑客，一手百步飞剑击杀无数强者。' },
+            { name: '卫庄', msg: '和盖聂为同门师兄，同是鬼谷弟子。' },
+            { name: '黑白玄翦', msg: '被卫庄评价为一代剑之豪者，实力深不可测。' }]
+        //点击按钮创建表格
+        document.getElementById('btn').onclick = function () {
+            //创建table加入到div中
+            var tableObj = document.createElement("table");
+            divObj.appendChild(tableObj);
+            //创建行并把行加入到table中
+            for (var i = 0; i < list.length; i++) {
+                var item = list[i];//每个对象
+                var trObj = document.createElement("tr");
+                tableObj.appendChild(trObj);
+                //创建第一个列，然后加入到行中
+                var td1 = document.createElement("td");
+                td1.innerText = item.name;
+                trObj.appendChild(td1);
+                //创建第二个列并加入到行中
+                var td2 = document.createElement("td");
+                td2.innerHTML = item.msg;
+                trObj.appendChild(td2);
+            }
+        }
+    </script>
+</body>
+
+</html>

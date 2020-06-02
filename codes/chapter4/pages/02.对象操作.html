@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var user = {
+        name: '冷面寒枪-罗成',
+        age: 22,
+        wife: '窦线娘'
+    };
+    for (var key in user) {
+        console.log(key + ':' + user.key); //name:undefined age:undefined wife:undefined
+        console.log(typeof key); //string
+        // console.log(key + ':' + user[key]);
+    }
+    //  name:冷面寒枪-罗成
+    //  age:22
+    //  wife:窦线娘
+
+    delete user.wife;
+    for (var key in user) {
+        console.log(key + ':' + user[key]);
+    }
+    //  name:冷面寒枪-罗成
+    //  age:22
+</script>
+
+</html>

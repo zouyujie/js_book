@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 求1-100之间不能被7整除的整数的和
+    var sum1 = 0;
+    for (var i = 1; i <= 100; i++) {
+        if (i % 7 != 0) {
+            continue;
+        }
+        sum1 += i;
+    }
+    console.log('sum1 :', sum1); // 735
+    // 求整数1～100的累加值，但要求碰到个位为4的数则停止累加
+    var sum2 = 0;
+    for (var i = 1; i <= 100; i++) {
+        if (i % 10 == 4) {
+            break;
+        }
+        sum2 += i;
+    }
+    console.log('sum2 :', sum2);//6:1+2+3
+    debugger;
+</script>
+
+</html>

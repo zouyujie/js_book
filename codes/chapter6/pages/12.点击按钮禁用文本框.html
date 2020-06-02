@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="禁用文本框" id="btn" />
+    <input type="text" value="文本框" id="txt" />
+    <script>
+        //先根据id获取按钮，为按钮注册点击事件，添加事件处理函数
+        document.getElementById("btn").onclick = function () {
+            //根据id获取文本框，设置disabled属性
+            document.getElementById("txt").disabled = true;
+        };
+    </script>
+</body>
+
+</html>

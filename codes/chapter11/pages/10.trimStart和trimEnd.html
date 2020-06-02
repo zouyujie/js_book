@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = ' 打工是不可能的 '
+        console.log(str.length) // 9
+        str = str.trimStart()
+        console.log(str.length) // 8
+        let str1 = str.trim() // 清除前后的空格
+        console.log(str1.length) // 7
+        str.replace(/^\s+/g, '') // 也可以用正则实现开头删除空格
+
+        let str2 = ' 这辈子是不可能打工的 '
+        console.log(str2.length) // 12
+        str2 = str2.trimEnd()
+        console.log(str2.length) // 11
+        let str3 = str2.trim() //清除前后的空格
+        console.log(str3.length) // 10
+        str2.replace(/\s+$/g, '') // 也可以用正则实现右端移除空白字符
+    </script>
+</body>
+
+</html>

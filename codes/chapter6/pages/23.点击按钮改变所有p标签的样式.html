@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="变色" id="btn" />
+    <div id="div">
+        <p>天泽</p>
+        <span>百毒王</span>
+        <p>驱尸魔</p>
+        <span>焰灵姬</span>
+        <p>无双鬼 </p>
+    </div>
+    <script>
+        document.getElementById('btn').onclick = function () {
+            //先获取div
+            var dvObj = document.getElementById("div");
+            //获取里面所有的子节点
+            var nodes = dvObj.childNodes;
+            //循环遍历所有的子节点
+            for (var i = 0; i < nodes.length; i++) {
+                //判断这个子节点是不是p标签
+                if (nodes[i].nodeType == 1 && nodes[i].nodeName == "P") {
+                    nodes[i].style.backgroundColor = "green";
+                    nodes[i].style.color = 'white';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

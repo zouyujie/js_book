@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>诸子百家，唯我纵横</p>
+    <script>
+        var body = document.body;
+        var div = document.createElement('div');
+        div.innerHTML = '天行九歌';
+        body.appendChild(div);
+
+        var firstEle = body.children[1]; //p
+        body.insertBefore(div, firstEle);
+
+        body.removeChild(firstEle); //script
+        var b = document.createElement('b');
+        b.innerHTML = '弱者没有资格要求公平';
+        body.replaceChild(b, div);
+
+        var cloneB = b.cloneNode(true);
+        body.appendChild(cloneB);
+    </script>
+</body>
+
+</html>

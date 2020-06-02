@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 150px;
+            height: 200px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../images//nvdi.jpg" id="img" />
+    <script>
+        var img = document.getElementById('img');
+        document.onclick = function (event) {
+            //解决兼容问题
+            event = event || window.event;
+            var x = event.clientX;
+            var y = event.clientY;
+            //有的浏览器把高度设计在了文档的第一个元素中了
+            //有的浏览器把高度设计在了body中了
+            var st = document.body.scrollTop || document.documentElement.scrollTop;
+            var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+
+            //设置图片坐标
+            img.style.left = x + sl + 'px';
+            img.style.top = y + st + 'px';
+            console.log('当前坐标：', x, y)
+        }
+    </script>
+</body>
+
+</html>

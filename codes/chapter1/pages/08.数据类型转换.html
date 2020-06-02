@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //转整数
+    console.log(parseInt("17"));//17
+    console.log(parseInt("17日"));//17
+    console.log(parseInt("鹅2"));//NaN
+    console.log(parseInt("2月17日"));//2
+    console.log(parseInt("3.14"));//3
+    console.log(parseInt("3.14圆周率"));//3
+
+    console.log("=============================");
+
+    //转小数
+    console.log(parseFloat("17"));//17
+    console.log(parseFloat("17日"));//17
+    console.log(parseFloat("鹅2"));//NaN
+    console.log(parseFloat("2月17日"));//2
+    console.log(parseFloat("3.14"));//3.14
+    console.log(parseFloat("3.14圆周率"));//3.14
+
+    console.log("=============================");
+
+    // 转数字
+    console.log(Number("17"));//17
+    console.log(Number("17日"));//NaN
+    console.log(Number("鹅2"));//NaN
+    console.log(Number("2月17日"));//NaN
+    console.log(Number("3.14"));//3.14
+    console.log(Number("3.14圆周率"));//NaN
+
+    console.log("=============================");
+    var str = '200';
+    console.log(+str);        // 取正：200
+    console.log(-str);        // 取负：-200
+    console.log(str - 0);   //200
+
+
+    //转字符串
+    // var msg;
+    // //报错：Cannot read property 'toString' of undefined
+    // console.log(msg.toString());
+    // msg = null;
+    // //报错：Cannot read property 'toString' of null
+    // console.log(msg.toString());
+    // var num = 1;
+    // console.log(num.toString());//1
+
+    var msg;
+    console.log(String(msg)); //undefined
+    var res = null;
+    console.log(String(res)); //null
+    console.log(String(1)); //1
+
+    var result = 1 + '';
+    console.log(result); //1
+    //获取数据类型
+    console.log(typeof (result));//string
+
+    console.log("=============================");
+
+
+    console.log(Boolean(0));//false
+    console.log(Boolean(""));//false
+    console.log(Boolean(null));//false
+    console.log(Boolean(undefined));//false
+    console.log(Boolean(NaN));//false
+    console.log(Boolean(1));//true
+    console.log(Boolean(2));//true
+    console.log(Boolean(-2));//true
+    console.log(Boolean("李淳风"));//true
+
+
+    console.log("=============================");
+    var userName = '袁天罡';
+    var age = 300;
+    console.log('userName :', typeof userName);//userName : string
+    console.log('age :', typeof age);//age : number
+
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            width: 200px;
+            height: 46px;
+            background-color: pink;
+            border: 1px solid green;
+            margin-bottom: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div" id="div"></div>
+    <input type="button" value="设置样式" id="btn" />
+    <script>
+        document.getElementById('btn').onclick = function () {
+            var div = document.getElementById('div');
+            div.style.backgroundColor = 'orange';
+            div.style.border = '2px dashed black';
+            div.innerText = '卡卡西';
+        }
+    </script>
+</body>
+
+</html>

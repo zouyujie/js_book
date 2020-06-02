@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // var name; //正常
+    // var $name; //正常
+    // var _sex;  //正常
+    // var &sex; //错误
+    // var 11; //错误
+    // var age18;//正常
+    // var 17age; //错误
+    // var 沈浪; //正常
+
+
+    var a = 10;
+    var b = 20;
+    //a的变量中的值和b变量中的值取出来相加，将结果重新赋值给a这个变量
+    a = a + b;//30
+    //a变量的值和b变量的值取出来相减，将结果重新赋值给b
+    b = a - b;//10
+    //a变量的值和b变量的值取出来相减，将结果重新赋值给a
+    a = a - b;//20
+    console.log(a, b); // 20 10
+
+
+    // 使用第三方的变量进行交换
+    var temp = a;
+    a = b;
+    b = temp;
+
+    // 变量的交换---位运算:只需要看代码,不需要理解
+    var num1 = 10;
+    var num2 = 20;
+    num1 = num1 ^ num2;
+    num2 = num1 ^ num2;
+    num1 = num1 ^ num2;
+    console.log(num1, num2);
+
+
+    var name = "阳顶天";
+    var age = 33;
+</script>
+
+</html>

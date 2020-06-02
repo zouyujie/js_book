@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="隔行变色" id="btn" />
+    <div>日向雏田</div>
+    <div>春野樱</div>
+    <div>山中井野</div>
+    <div>夕日红</div>
+    <div>日向花火</div>
+    <div>手鞠</div>
+    <script>
+        document.getElementById('btn').onclick = function () {
+            //获取所有的li标签
+            var list = document.getElementsByTagName("div");
+            for (var i = 0; i < list.length; i++) {
+                list[i].style.backgroundColor = i % 2 == 0 ? "lightgreen" : "pink";
+            }
+        };
+    </script>
+</body>
+
+</html>

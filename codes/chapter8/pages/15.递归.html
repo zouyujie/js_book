@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 求n个数字的和(n等于3时，结果=3+2+1)
+      function getSum(n) {
+        if (n == 1) {
+          return 1;
+        }
+        return n + getSum(n - 1);
+      }
+      //函数的调用：n=10
+      console.log(getSum(3)); //6
+
+      // 斐波那契数列
+      function getFib(n) {
+        if (n == 1 || n == 2) {
+          return 1;
+        }
+        return getFib(n - 1) + getFib(n - 2);
+      }
+      //求第10个数是多少
+      console.log(getFib(10)); //55
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1.创建正则对象
+      var reg = new RegExp(/\d{11}/, 'g'); //11位数字
+      var flag = reg.test('我的电话是15243641131'); //2.调用方法验证字符串是否匹配
+      console.log(flag); //true
+
+      //筛选出【】中的内容
+      //字面量的方式创建正则表达式对象
+      var reg = /\【([^】]*)\】/g;
+      var txt = '我毕业于【湖南第一师范】，所学专业【电子信息工程】';
+      var result = txt.match(reg);
+      console.log(result);
+    </script>
+  </body>
+</html>

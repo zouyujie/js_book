@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="cbxAll" />全选/反选</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td><input type="checkbox" />桃地再不斩</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" />鬼灯水月</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" />批把十藏</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        //获取元素
+        var cbxAll = document.getElementById('cbxAll');
+        var dbody = document.getElementById('tbody');;
+        var cbxes = dbody.getElementsByTagName('input');
+        //点击全选/反选
+        cbxAll.onclick = function () {
+            for (var i = 0; i < cbxes.length; i++) {
+                cbxes[i].checked = this.checked;//tbody中的复选框状态和全选/反选选中状态一致
+            }
+        }
+        //设置全选/反选状态
+        var setCheckAllStatus = function () {
+            var checkedNums = 0;
+            Array.prototype.forEach.call(cbxes, (cbox, index) => {
+                if (cbox.checked) {
+                    checkedNums++;
+                }
+            });
+            //tbody中的复选框都选中了，那么全选/反选按钮选中，否则不选中
+            cbxAll.checked = cbxes.length == checkedNums;
+        }
+        Array.prototype.forEach.call(cbxes, (cbox, index) => {
+            //给tbody中的复选框注册点击事件
+            cbox.onclick = setCheckAllStatus;
+        });
+    </script>
+</body>
+
+</html>

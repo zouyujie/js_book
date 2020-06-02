@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var str = "邹琼俊";
+    str = "邹玉杰";
+
+    console.log(str[0]); //邹
+    for (var i = 0; i < str.length; i++) {
+        console.log(str[i]);
+    }
+    console.log(str.length);
+    var name = new String('小小刀');
+    console.log(name.charAt(2));//刀
+    console.log(name.charCodeAt(2));//20992
+    console.log(name[2]);//刀
+    console.log('======================');
+
+
+
+    //把ASCII码转换成字符串
+    var str1 = String.fromCharCode(83, 79, 83);
+    console.log(str1);//SOS
+
+    var str2 = "我";
+    console.log(str2.concat("喜欢", "你"));//我喜欢你
+
+    var msg = "姑苏城外寒山寺";
+    console.log(msg.slice(4, 7));//寒山寺
+    console.log(msg.substring(4, 6));//寒山
+    console.log(msg.substr(4, 2));//寒山
+
+    var msg1 = '你是谁 ';
+    console.log(msg1.trim());//你是谁
+
+    var index = str.indexOf("杰");
+    console.log(index); //2
+
+    var str3 = "桃花庵下桃花仙";
+    var index3 = str3.lastIndexOf('桃');
+    console.log(index3);//4
+
+    var str4 = "萧峰、萧远山、慕容博、鸠摩智";
+    var arr4 = str4.split("、");
+    console.log('arr4 :', arr4);// ["萧峰", "萧远山", "慕容博", "鸠摩智"]
+
+    var str5 = "name";
+    str5 = str5.toLocaleLowerCase();
+    console.log(str5); //name
+    var str6 = "name";
+    str6 = str6.toLowerCase();
+    console.log(str6); //name
+
+
+    var str7 = "user";
+    str7 = str7.toLocaleUpperCase();
+    console.log(str7);//USER
+    var str8 = "user";
+    str8 = str8.toUpperCase();
+    console.log(str8);//USER
+</script>
+
+</html>

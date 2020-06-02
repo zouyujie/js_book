@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   function Person(name, age, sex) {
+      //     this.name = name;
+      //     this.age = age;
+      //     this.sex = sex;
+      //     this.fight = function() {
+      //       console.log('使出多重影分身术');
+      //     };
+      //   }
+
+      function fight() {
+        console.log('使出多重影分身术');
+      }
+      function Person(name, age, sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+        this.fight = fight;
+      }
+      var mingren = new Person('漩涡鸣人', 35, '男');
+      var boren = new Person('漩涡博人', 10, '男');
+      console.log(mingren.fight == boren.fight); //true
+    </script>
+  </body>
+</html>

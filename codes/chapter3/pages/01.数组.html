@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var sort = ["天机棒", "龙凤双环", "小李飞刀", "嵩阳铁剑", "温侯银戟", "蛇鞭", "金刚铁拐", "青魔手", "东海玉萧"]
+    // var arr = new Array();//定义了一个数组
+    // console.log(arr); //Array(0) 
+    // alert(arr);//空的弹窗，什么内容都不显示
+
+    // var arr = new Array(3);
+    // console.log(arr[0], arr[1], arr[2]);//undefined undefined undefined
+
+    var arr = new Array("松树", "竹子", "梅花"); //申明一个数组存储岁寒三友的名字
+    console.log('arr :', arr); //arr : (3) ["松树", "竹子", "梅花"]
+
+    // var arr = [];
+    // console.log(arr); //[]
+
+    // var person = ["孙白发", "上官金虹", "李寻欢"];
+    // console.log(person[0]); //孙白发
+    // console.log(person[1]); //上官金虹
+    // console.log(person[2]); //李寻欢
+    // console.log(person[3]); //undefined:这个数组的最大下标为2,因此返回undefined
+
+    // var arr = ["张三丰", "张无忌", "空见"];
+    // for (var i = 0; i < arr.length; i++) {
+    //     console.log(arr[i]);
+    // }
+    // // for of的方式遍历数组
+    // for (var item of arr) {
+    //     console.log(item);
+    // }
+
+    var person = ["孙白发", "上官金虹", "李寻欢"];
+    person[1] = "李寻欢"; //把上官金虹替换成了李寻欢
+    person[3] = "阿飞"; //给数组新增加了一个阿飞的值
+    person.push('荆无命'); //在数组的后面增加了一个值
+    console.log('person :', person);
+
+    var arr = ["梅、兰、竹、菊", 100, true];
+
+</script>
+
+</html>

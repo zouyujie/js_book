@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function say(name, msg) {
+        console.log('清代' + name + '说：' + msg, this);
+      }
+      say('王夫之', '清风有意难留我,明月无心自照人'); //函数的调用
+
+      //apply和call调用函数
+      //   say.apply();
+      //   say.call();
+      //   say.apply(null);
+      //   say.call(null);
+
+      say.apply(null, ['王夫之', '清风有意难留我,明月无心自照人']);
+      say.call(null, '王夫之', '清风有意难留我,明月无心自照人');
+
+      function Person(name, msg) {
+        this.name = name;
+        this.msg = msg;
+      }
+      //通过原型添加方法
+      Person.prototype.say = function() {
+        console.log('清代' + this.name + '说：' + this.msg);
+      };
+      var per = new Person('王夫之', '清风有意难留我,明月无心自照人');
+      per.say();
+
+      console.log('--------------分割线----------------');
+      function Student(name, msg) {
+        this.name = name;
+        this.msg = msg;
+      }
+      var stu = new Student('顾炎武', '天下兴亡，匹夫有责');
+      per.say.apply(stu); //此时say中的this是stu
+      per.say.call(stu);
+
+      console.dir(per.say);
+      console.log(per.say.__proto__ == Function.prototype);
+    </script>
+  </body>
+</html>

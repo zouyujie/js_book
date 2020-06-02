@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function f1() {
+        var num = 2;//1级链
+        function f2() {
+            num = 3;//2级链
+            console.log(num);
+        }
+        f2();
+    }
+    var num = 1; //0级链
+    f1();//3：0级链 
+</script>
+
+</html>

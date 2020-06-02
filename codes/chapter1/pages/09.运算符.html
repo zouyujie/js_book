@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    //前置++
+    var num1 = 1;
+    ++num1;
+    var num2 = 2;
+    console.log(num1 + ++num2); //2+3=5
+
+    console.log("=============================");
+    //后置++
+    var num1 = 1;
+    num1++;
+    var num2 = 2;
+    console.log(num1 + num2++); //2+2=4
+
+
+    var result = '11' == 11;      // true
+    var result = '11' === 11;     // false 值相等，类型不相等
+    var result = 11 === 11;     // true
+
+    console.log("=============================");
+    var num3 = 10;
+    var result = num3 % 3;//num变量与3取余--->10/3的余数
+    console.log(result); //1
+
+    console.log("=============================");
+    var num = 0;
+    num += 1;    //相当于  num = num + 1;
+
+    var res = 4 >= 6 || '你' != '我' && !(2 * 2 == 6) && true; //true 
+    console.log('res :', res);
+</script>
+
+</html>

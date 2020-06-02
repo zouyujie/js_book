@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            border: 5px solid gray;
+        }
+
+        .item {
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            margin: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div class="item"></div>
+    </div>
+    <script>
+        var box = document.getElementById('box');
+        // 偏移量
+        console.log(box.offsetParent); //body
+        console.log(box.offsetLeft); //8
+        console.log(box.offsetTop);//8
+        console.log(box.offsetWidth); //210
+        console.log(box.offsetHeight);//210
+
+        // 客户区
+        console.log(box.clientLeft); //5
+        console.log(box.clientTop); //5
+        console.log(box.clientWidth);//200
+        console.log(box.clientHeight); //200
+
+        // 滚动偏移
+        console.log(box.scrollLeft); //0
+        console.log(box.scrollTop); //0
+        console.log(box.scrollWidth); //200
+        console.log(box.scrollHeight) //200
+    </script>
+</body>
+
+</html>

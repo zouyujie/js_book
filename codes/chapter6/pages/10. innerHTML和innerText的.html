@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="获取文本" id="btnGet" />
+    <input type="button" value="设置文本" id="btnSet" />
+    <input type="button" value="获取HTML文本" id="btnGetHtml" />
+    <input type="button" value="设置HTML文本" id="btnSetHtml" />
+    <div id="div">多重影分身</div>
+    <script>
+        var div = document.getElementById('div');
+        document.getElementById('btnGet').onclick = function () {
+            console.log(div.innerText);
+        }
+        document.getElementById('btnSet').onclick = function () {
+            div.innerText = '影分身手里剑';
+        }
+        document.getElementById('btnGetHtml').onclick = function () {
+            console.log(div.innerHTML);
+        }
+        document.getElementById('btnSetHtml').onclick = function () {
+            div.innerHTML = '<b>漩涡鸣人连弹</b>';
+        }
+    </script>
+</body>
+
+</html>

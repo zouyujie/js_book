@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log(/hello.world/.test("hello\nworld")); //false
+        console.log(/hello.world/s.test("hello\nworld"));//true
+
+        // const reDate = /([0-9]{4})-([0-9]{2})-([0.-9]{2})/;
+        // const match = reDate.exec("2020-04-25");
+        // console.log(match[0]);    // 2020-04-25
+        // console.log(match[1]);    // 2020
+        // console.log(match[2]);    // 04
+        // console.log(match[3]);    // 25
+
+        // 命名捕获组
+        const reDate = /(?<year>[0-9]{4})-(?<mouth>[0-9]{2})-(?<day>[0.-9]{2})/;
+        const match = reDate.exec("2020-04-25");
+        console.log(match.groups);    // {year: "2020", mouth: "04", day: "25"}
+        console.log(match.groups.year);    // 2020
+        console.log(match.groups.mouth);    // 04
+        console.log(match.groups.day);    // 25
+
+        //replace
+        const reg = /(?<year>\d{4})-(?<month>\d{2})-(?<day>\d{2})/
+        const usDate = '2020-04-25'.replace(reg, '$<month>-$<day>-$<year>')
+        console.log(usDate);//04-25-2020
+
+
+
+        // 先行断言
+        // const reLookahead = /\D(?=\d+)/;
+        // const match1 = reLookahead.exec("说3166")
+        // console.log(match1[0]) //说
+
+        //后行断言
+        const reLookbehind = /(?<=\D)\d+/;
+        const match2 = reLookbehind.exec("说3166")
+        console.log(match2[0])  //3166
+
+        // Unicode属性转义
+        const str = '㉛';
+        console.log(/\d/u.test(str));    // → false
+        console.log(/\p{Number}/u.test(str));     // → true
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      body {
+        background-color: #333;
+      }
+
+      .nav {
+        width: 600px;
+        height: 42px;
+        margin: 100px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        position: relative;
+      }
+
+      .nav li {
+        width: 83px;
+        height: 42px;
+        text-align: center;
+        line-height: 42px;
+        float: left;
+        cursor: pointer;
+      }
+
+      .nav span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 83px;
+        height: 42px;
+        background: url(../images/nav/cloud.gif) no-repeat;
+      }
+
+      ul {
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <span id="bgSpan"></span>
+      <ul id="navBar">
+        <li>幻音坊</li>
+        <li>通文馆</li>
+        <li>玄冥教</li>
+        <li>不良人</li>
+        <li>十二峒</li>
+        <li>天师府</li>
+      </ul>
+    </div>
+    <script>
+      //匀速动画(指定元素，目标位置)
+      function animate(element, target) {
+        //清理定时器
+        clearInterval(element.timeId);
+        element.timeId = setInterval(function () {
+          //获取元素的当前位置
+          var current = element.offsetLeft;
+          //移动的步数
+          var step = (target - current) / 10;
+          step = step > 0 ? Math.ceil(step) : Math.floor(step);
+          current += step;
+          element.style.left = current + 'px';
+          if (current == target) {
+            //清理定时器
+            clearInterval(element.timeId);
+          }
+        }, 20);
+      }
+
+      //获取背景浮层
+      var bgSpan = document.getElementById('bgSpan');
+      //获取所有的li标签
+      var list = document.getElementById('navBar').children;
+      //循环遍历分别注册鼠标进入,鼠标离开,点击事件
+      for (var i = 0; i < list.length; i++) {
+        //鼠标进入事件
+        list[i].onmouseover = mouseoverHandle;
+        //点击事件
+        list[i].onclick = clickHandle;
+        //鼠标离开事件
+        list[i].onmouseout = mouseoutHandle;
+      }
+      function mouseoverHandle() {
+        //进入
+        //移动到鼠标此次进入的li的位置
+        animate(bgSpan, this.offsetLeft);
+      }
+      //点击的时候，记录此次点击的位置
+      var lastPosition = 0;
+      //点击
+      function clickHandle() {
+        lastPosition = this.offsetLeft;
+      }
+      //离开
+      function mouseoutHandle() {
+        animate(bgSpan, lastPosition);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.函数模式的闭包：在一个函数中有一个函数
+      function a() {
+        var num = 1;
+        //函数的声明
+        function b() {
+          console.log(num);
+        }
+        //函数调用
+        b();
+      }
+      a(); //1
+
+      //2.对象模式的闭包：函数中有一个对象
+      function say() {
+        var name = '武圣人于和';
+        var obj = {
+          name: name
+        };
+        console.log(obj.name); //武圣人于和
+      }
+      say(); //武圣人于和
+    </script>
+  </body>
+</html>

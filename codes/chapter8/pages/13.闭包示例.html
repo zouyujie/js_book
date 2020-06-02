@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //普通函数
+      function autoAdd() {
+        var num = 1;
+        num++;
+        return num;
+      }
+      console.log(autoAdd()); //2
+      console.log(autoAdd()); //2
+      console.log(autoAdd()); //2
+
+      //函数模式的闭包
+      function autoAdd2() {
+        var num = 1;
+        return function() {
+          num++;
+          return num;
+        };
+      }
+      var fun = autoAdd2();
+      console.log('--------分割线---------');
+      console.log(fun()); //2
+      console.log(fun()); //3
+      console.log(fun()); //4
+    </script>
+  </body>
+</html>

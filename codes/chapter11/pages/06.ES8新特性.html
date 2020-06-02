@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function first() {
+        return new Promise((resolve, reject) => {
+            let msg = "攻打岩流岛";
+            setTimeout(() => {
+                resolve(msg)
+            }, 1000)
+        })
+    }
+    function two() {
+        return new Promise((resolve, reject) => {
+            let msg = "偷袭钟乳洞";
+            setTimeout(() => {
+                resolve(msg)
+            }, 1000)
+        })
+    }
+    function three() {
+        return new Promise((resolve, reject) => {
+            let msg = "突破一线天";
+            setTimeout(() => {
+                resolve(msg)
+            }, 1000)
+        })
+    }
+    async function fun() {
+        let res = await first()
+        console.log('1:', res)
+        res = await two();
+        console.log('2:', res)
+        res = await three();
+        console.log('3:', res)
+    }
+    fun();
+
+    var user = { name: '覃飞', motto: '也曾壮志凌云，不悲人生苦短' };
+    Object.keys(user).forEach((key, index) => {
+        console.log(`${key}:${user[key]}`);
+    })
+    //  name:覃飞
+    //  motto:也曾壮志凌云，不悲人生苦短
+    for (let key of Object.keys(user)) {
+        console.log(key, user[key]);
+    }
+
+    let result = JSON.stringify(Object.entries(user));
+    console.log('result :', result);
+    //result : [["name","覃飞"],["motto","也曾壮志凌云，不悲人生苦短"]]
+
+    for (let [key, value] of Object.entries(user)) {
+        console.log(`${key}: ${value}`);
+    }
+    //或者
+    Object.entries(user).forEach(([key, value]) => {
+        console.log(`${key}: ${value}`)
+    })
+
+    let name = '葫芦娃'.padStart(7);
+    console.log(name);//    葫芦娃
+    console.log(name.length);//7
+
+    console.log('10.00'.padStart(10));
+    console.log('10,000.00'.padStart(10));
+    //     10.00
+    // 10,000.00
+    console.log('重要'.padStart(5, '*'));//***重要
+
+    console.log('曾经沧海难为水'.padEnd(10, '-'));//曾经沧海难为水---
+
+</script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        width: 926px;
+        margin: 0px auto;
+        height: 100%;
+      }
+      img {
+        vertical-align: top;
+      }
+      .main {
+        margin: 0 auto;
+        width: 926px;
+      }
+      .fixed {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        margin-left: -463px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="banner" id="bannerPart">
+        <img src="../images/fixed_nav/banner.png" />
+      </div>
+      <div class="nav" id="navPart">
+        <img src="../images/fixed_nav/nav.png" />
+      </div>
+      <div class="main" id="mainPart">
+        <img src="../images/fixed_nav/main.png" />
+        <img src="../images/fixed_nav/main2.png" style="margin-left: 2px;" />
+      </div>
+    </div>
+    <script>
+      //获取页面向上或者向左移出去的距离的值
+      function getScroll() {
+        return {
+          left:
+            window.pageXOffset ||
+            document.documentElement.scrollLeft ||
+            document.body.scrollLeft ||
+            0,
+          top:
+            window.pageYOffset ||
+            document.documentElement.scrollTop ||
+            document.body.scrollTop ||
+            0,
+        };
+      }
+
+      //注册滚动事件
+      window.onscroll = function () {
+        //向上移出去的距离和最上面的div的高度对比
+        if (
+          getScroll().top >= document.getElementById('bannerPart').offsetHeight
+        ) {
+          //设置第二个div的类样式
+          document.getElementById('navPart').className = 'nav fixed';
+          //设置第三个div的marginTop的值
+          document.getElementById('mainPart').style.marginTop =
+            document.getElementById('navPart').offsetHeight + 'px';
+        } else {
+          document.getElementById('navPart').className = 'nav';
+          document.getElementById('mainPart').style.marginTop = '10px';
+        }
+      };
+    </script>
+  </body>
+</html>

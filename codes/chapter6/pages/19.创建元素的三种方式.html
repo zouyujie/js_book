@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="创建一个p" onclick="createP()" />
+    <input type="button" value="创建一个span" onclick="createSpan()" />
+    <input type="button" value="创建一个img" onclick="createImg()" />
+    <div id="div"></div>
+    <script>
+        // 点击按钮,在div中创建一个p标签
+        function createP() {
+            document.write("<p>黑白玄翦</p>");
+        }
+        //对象.innerHTML="标签代码及内容";
+        function createSpan() {
+            document.getElementById('div').innerHTML = '<span>惊鲵</span>'
+        }
+        //把元素追加到父级元素中
+        function createImg() {
+            //创建一个图片对象
+            var img = document.createElement("img");
+            //设置图片对象的属性
+            img.src = '../images/jingni.jpg';
+            img.style.width = '250px';
+            img.style.height = '209px';
+            //把创建后的子元素追加到父级元素中
+            document.getElementById('div').appendChild(img);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            cursor: pointer;
+        }
+
+        li:hover {
+            color: lightblue;
+        }
+
+        .bg {
+            background: pink;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    忍刀七人众
+    <ol id="ol">
+        <li>枇杷十藏</li>
+        <li>西瓜山河豚鬼</li>
+        <li>栗霰串丸</li>
+        <li>通草野饵人</li>
+        <li>无梨甚八</li>
+        <li>黑锄雷牙</li>
+        <li>鬼灯千刃</li>
+    </ol>
+    武器：<span id="weaponName"></span>
+    <hr />
+    <input type="button" value="移除自定义属性" id="btnRemove" />
+    <input type="button" value="新增自定义属性" id="btnAdd" />
+    <div class="bg" id="div">迈特戴</div>
+    <script>
+        var ol = document.getElementById('ol');//根据id获取ol标签
+        var list = ol.getElementsByTagName('li');//获取ol标签中所有的li
+        var weaponsArr = ['断刀·斩首大刀', '大刀·鲛肌', '长刀·缝针', '钝刀·兜割', '爆刀·飞沫', '雷刀·牙', '双刀·鲆鲽']//武器库
+
+        var spn = document.getElementById('weaponName');
+        //循环遍历
+        for (var i = 0; i < list.length; i++) {
+            //先为每个li添加自定义属性
+            list[i].setAttribute("weapons", weaponsArr[i]);
+            //点击每个li标签,显示对应的自定义属性值
+            list[i].onclick = function () {
+                spn.innerHTML = this.getAttribute("weapons");
+                console.log(this.weapons);//undefined
+            };
+        }
+        var div = document.getElementById('div');
+        //点击按钮移除元素的自定义属性
+        document.getElementById('btnRemove').onclick = function () {
+            div.removeAttribute("class");
+        }
+        //点击按钮新增元素的自定义属性
+        document.getElementById('btnAdd').onclick = function () {
+            div.setAttribute("class", 'bg');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divContainer {
+            width: 250px;
+            height: 150px;
+            background-color: lightcoral;
+        }
+
+        #divBox {
+            width: 200px;
+            height: 100px;
+            background-color: lightgreen;
+        }
+
+        #divItem {
+            width: 150px;
+            height: 70px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divContainer">
+        <div id="divBox">
+            <div id="divItem"></div>
+        </div>
+    </div>
+    <script>
+        var funArr = [
+            function () {
+                console.log("我是大boss");
+            },
+            function () {
+                console.log('我是divContainer');
+            }, function () {
+                console.log('我是divBox');
+            }, function () {
+                console.log('我是divItem');
+            }
+        ];
+        //同时注册点击事件
+        var objs = [
+            document.body, document.getElementById('divContainer'), document.getElementById('divBox'), document.getElementById('divItem')
+        ];
+        //遍历注册事件
+        objs.forEach(function (ele, index) {
+            //为每个元素绑定事件
+            ele.addEventListener("click", function (e) {
+                console.log("当前阶段：" + e.eventPhase, "当前对象索引：" + index);
+                funArr[index]();
+            }, true);
+        });
+    </script>
+    <input type="button" value="夜幕" id="btn" />
+    <script>
+        document.getElementById("btn").onclick = fun; //鼠标点击
+        document.getElementById("btn").onmouseover = fun; //鼠标移入
+        document.getElementById("btn").onmouseout = fun; //鼠标移出
+        function fun(e) {
+            switch (e.type) {
+                case "click":
+                    alert("你点击了我");
+                    break;
+                case "mouseover":
+                    this.style.backgroundColor = "lightgreen";
+                    break;
+                case "mouseout":
+                    this.style.backgroundColor = "orange";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>

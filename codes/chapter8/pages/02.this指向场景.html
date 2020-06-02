@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input id="btn" type="button" value="按钮" />
+    <script>
+      //1.普通函数
+      function f1() {
+        console.log('普通函数:', this);
+      }
+      f1();
+      //2.构造函数
+      function Person() {
+        console.log('构造函数:', this);
+        //3.对象的方法
+        this.say = function() {
+          console.log('对象的方法:', this);
+        };
+      }
+      var per = new Person();
+      per.say();
+      //4.定时器中的this
+      setTimeout(function() {
+        console.log('定时器:', this);
+      }, 100);
+      // 5.事件绑定方法
+      var btn = document.getElementById('btn');
+      btn.onclick = function() {
+        console.log('事件绑定方法：', this);
+      };
+      btn.click();
+    </script>
+  </body>
+</html>

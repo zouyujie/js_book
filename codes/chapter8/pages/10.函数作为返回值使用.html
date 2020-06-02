@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div"></div>
+    <script>
+      function say(msg) {
+        return function() {
+          console.log('张昭曰：' + msg);
+        };
+      }
+
+      var fun = say('管仲相桓公，霸诸侯，一匡天下');
+      fun();
+
+      //跑马灯 产生了闭包（后面会讲）
+      function marquee(msg) {
+        var txt = msg;
+        setInterval(() => {
+          txt = f1(txt); //函数当成返回值
+          document.getElementById('div').innerText = txt;
+        }, 500);
+      }
+      function f1(msg) {
+        //获取到头的第一个字符
+        var start = msg.substring(0, 1);
+        //获取到后面的所有字符
+        var end = msg.substring(1);
+        //重新拼接得到新的字符串，并赋值给this.message
+        return end + start;
+      }
+      marquee('不要问我从哪里来');
+    </script>
+  </body>
+</html>

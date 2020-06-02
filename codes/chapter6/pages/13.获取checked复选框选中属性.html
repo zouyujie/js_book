@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="checkbox" value="一尾守鹤" />一尾守鹤
+    <input type="checkbox" value="二尾又旅" />二尾又旅
+    <input type="checkbox" value="三尾矶抚" />三尾矶抚
+    <p id="checkedVal"></p>
+    <script>
+        var cboxes = document.getElementsByTagName('input');
+        var checkedVal = document.getElementById('checkedVal');
+        var arr = [];
+        //注意，这里用let代替var
+        for (let i = 0; i < cboxes.length; i++) {
+            cboxes[i].onclick = function () {
+                if (this.checked == true) {
+                    arr.push(this.value);
+                } else {
+                    arr.splice(i, 1);
+                }
+                checkedVal.innerText = arr.join(',');
+            }
+        }
+    </script>
+</body>
+
+</html>

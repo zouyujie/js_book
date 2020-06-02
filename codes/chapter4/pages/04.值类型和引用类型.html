@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var name = "沈浪";
+    var age = 27;
+
+    var baseObj = {
+        name: '霍天都',
+        nickname: '天都居士',
+        weapons: '剑',
+        say: function () { }
+    }
+    var other = baseObj;
+
+    var x = 1;
+    var y = 2;
+    fun(x, y);
+    function fun(num1, num2) {
+        num1 = num1 + 1;
+        num2 = num2 + 2;
+        console.log(x, y, num1, num2);//1 2 2 4
+    }
+
+    function Person(name, nickname, weapons) {
+        this.name = name;
+        this.nickname = nickname;
+        this.weapons = weapons;
+    }
+    var per1 = new Person('吴六奇', '雪中神丐', '竹棒');
+
+    function fun1(person) {
+        person.name = "夏雪宜";
+        person.nickname = "金蛇郎君";
+        person.weapons = "金蛇剑";
+    }
+    fun1(per1);
+    //Person {name: "夏雪宜", nickname: "金蛇郎君", weapons: "金蛇剑"}
+    console.log(per1); 
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //#region 函数手动调用
+      //   function fun() {
+      //     console.log('函数调用');
+      //   }
+      //   fun();
+      //#endregion
+
+      //#region 函数自调用
+      //   (function() {
+      //     console.log('函数自调用');
+      //   })();
+      //#endregion
+
+      //#region
+      //   (function(形参) {
+      //     var str = '我就是我'; //局部变量
+      //   })(实参);
+      //#endregion
+
+      //#region
+      (function(win) {
+        var str = '我就是我'; //局部变量
+        win.str = str; //js是一门动态类型的语言，及时一开始对象没有属性，点了就有了
+      })(window);
+      console.log(str + '，是不一样的烟火');
+      //#endregion
+    </script>
+  </body>
+</html>

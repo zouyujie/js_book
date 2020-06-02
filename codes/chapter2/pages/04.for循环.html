@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 打印99乘法表
+    var str = '';
+    for (var i = 1; i <= 9; i++) {
+        for (var j = i; j <= 9; j++) {
+            str += i + ' x ' + j + ' = ' + i * j + '\t';
+        }
+        str += '\n';
+    }
+    console.log(str);
+    console.log("========================================")
+    //求1-100之间所有奇数的和
+    var sum2 = 0;
+    for (var i = 1; i <= 100; i++) {
+        if (i % 2 != 0) {
+            //奇数
+            sum2 += i;
+        }
+    }
+    console.log("奇数和为:" + sum2); //2500
+    console.log("========================================")
+    //用五角星拼三角形：随着行数的增加，每一行都会比上一行多一个五角星
+    for (var i = 0; i <= 5; i++) {
+        //控制每一行有几个星星
+        for (var j = 0; j <= i; j++) {
+            document.write("★");
+        }
+        document.write("<br/>");
+    }
+</script>
+
+</html>

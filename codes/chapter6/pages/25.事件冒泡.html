@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divContainer {
+            width: 250px;
+            height: 150px;
+            background-color: lightcoral;
+        }
+
+        #divBox {
+            width: 200px;
+            height: 100px;
+            background-color: lightgreen;
+        }
+
+        #divItem {
+            width: 150px;
+            height: 70px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divContainer">
+        <div id="divBox">
+            <div id="divItem"></div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('divContainer').onclick = function () {
+            console.log('我是divContainer');
+        }
+        document.getElementById('divBox').onclick = function () {
+            console.log('我是divBox');
+        }
+        document.getElementById('divItem').onclick = function () {
+            console.log('我是divItem');
+        }
+        document.body.onclick = function () {
+            console.log("我是大boss");
+        };
+    </script>
+</body>
+
+</html>

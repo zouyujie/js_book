@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var baseObj = {
+        name: '毛泽东',
+        msg: '俱往矣，数风流人物，还看今朝',
+        school: '湖南第一师范',
+        doWork: function() {
+          console.log('解放全中国');
+        }
+      };
+      //把obj1对象中的所有的属性复制到对象obj2中
+      function lightCopy(obj1, obj2) {
+        for (var key in obj1) {
+          obj2[key] = obj1[key];
+        }
+      }
+      var newObj = {};
+      lightCopy(baseObj, newObj);
+      console.log(baseObj);
+      console.log(newObj);
+    </script>
+  </body>
+</html>

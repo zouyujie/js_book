@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // Math.PI                        // 圆周率
+    // Math.random()                // 生成随机数
+    // Math.floor() / Math.ceil()     // 向下取整/向上取整
+    // Math.round()                // 取整，四舍五入
+    // Math.abs()                    // 绝对值
+    // Math.max() / Math.min()         // 求最大和最小值
+    // Math.sin() / Math.cos()         // 正弦/余弦
+    // Math.power() / Math.sqrt()     // 求指数次幂/求平方根
+
+
+    console.log(Math.abs('-1'));//1
+    console.log(Math.abs(null));//0 
+    console.log(Math.abs("string"));//NaN
+
+    console.log(Math.ceil(11.7)); //12
+    console.log(Math.ceil(11.2)); //2
+
+    console.log(Math.floor(11.7)); //11
+    console.log(Math.floor(11.2)); //11
+
+    console.log(Math.max(1, 2, 3));//3
+    console.log(Math.min(1, 2, 3));//1
+
+    // 取1~100的随机数
+    function sum(m, n) {
+        var num = Math.floor(Math.random() * (m - n) + n);
+        console.log('随机数：' + num)
+    }
+    sum(1, 100);
+</script>
+
+</html>

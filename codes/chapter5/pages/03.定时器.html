@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 创建一个定时器，300毫秒后执行，返回定时器的标志
+        var timerId = setTimeout(function () {
+            console.log('我认可你了');
+        }, 300);
+
+        // 取消定时器的执行
+        clearTimeout(timerId);
+
+        // 创建一个定时器，每隔1秒调用一次
+        var timerId = setInterval(function () {
+            var date = new Date();
+            console.log(date.toLocaleTimeString());
+        }, 1000);
+        // 取消定时器的执行
+        clearInterval(timerId);
+    </script>
+</body>
+
+</html>

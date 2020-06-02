@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var baseObj = {
+        name: '王树涛',
+        nickname: '隔壁老王',
+        school: '湖南第一师范',
+        doWork: function() {
+          console.log('给邻居戴绿帽子');
+        },
+        girlFriend: ['小红', '小芳'],
+        dog: {
+          name: '二哈',
+          color: '灰色'
+        }
+      };
+      //把obj1对象中的所有数据深拷贝到对象obj2中
+      function deepCopy(obj1, obj2) {
+        for (var key in obj1) {
+          var item = obj1[key];
+          if (item instanceof Array) {
+            obj2[key] = [];
+            deepCopy(item, obj2[key]);
+          } else if (item instanceof Object) {
+            obj2[key] = {};
+            deepCopy(item, obj2[key]);
+          } else {
+            obj2[key] = item;
+          }
+        }
+      }
+      var newObj = {};
+      deepCopy(baseObj, newObj);
+      newObj.dog.name = '小黄'; //修改新对象中引用类型的属性值
+      console.log(baseObj);
+      console.log(newObj);
+    </script>
+  </body>
+</html>

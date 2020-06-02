@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //页面不刷新，只是改变history对象，地址栏会改变
+        window.history.pushState(null, '', '1.html');
+        //url参数带了hash值并不会触发hashchange事件
+        window.history.pushState(null, '', '#content');
+
+        //hashchange事件必须绑定再widnow对象上
+        window.onhashchange = function () {
+            console.log(location.hash)
+        };
+
+        console.dir(history);
+
+    </script>
+</body>
+
+</html>

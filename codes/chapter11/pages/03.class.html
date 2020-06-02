@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class Person {
+        // 构造函数，实例化的时候将会被调用，如果不指定，那么会有一个不带参数的默认构造函数.
+        constructor(name, nickName) {
+            this.name = name;
+            this.nickName = nickName;
+        }
+        // toString 是原型对象上的属性
+        toString() {
+            console.log('姓名:' + this.name + ',绰号:' + this.nickName);
+        }
+    }
+
+    var xxy = new Person('夏雪宜', '金蛇郎君');//实例化Person
+    xxy.toString();
+
+    console.log(xxy.hasOwnProperty('name')); //true
+    console.log(xxy.hasOwnProperty('toString')); // false
+    console.log(xxy.__proto__.hasOwnProperty('toString')); // true
+
+    class wulinPerson extends Person {
+        constructor(skill) {
+            // 子类必须要在constructor中指定super 函数，否则在新建实例的时候会报错.
+            // 如果没有指定consructor,默认super函数的constructor将会被添加
+            super('袁承志', '七省绿林盟主');
+            this.skill = skill;
+        }
+        toString() {
+            console.log('姓名:' + this.name + ',绰号:' + this.nickName + ',绝学:' + this.skill);
+        }
+    }
+
+    var ycz = new wulinPerson('混元功')
+    ycz.toString();
+
+    // ycz 是 wulinPerson 和 Person 的实例，和ES5完全一致。
+    console.log(ycz instanceof wulinPerson); // true
+    console.log(ycz instanceof Person); // true
+
+    console.log(ycz.hasOwnProperty('toString')); // false
+    console.log(ycz.__proto__.hasOwnProperty('toString')); // true
+</script>
+
+</html>

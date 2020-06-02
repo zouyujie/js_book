@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var baseObj = {
+        name: '金世遗',
+        nickname: '毒手疯丐',
+        weapons: '拐剑',
+        say: function() {
+          console.log(
+            '人间白眼曾经惯，留得余生又若何？欲上青天摘星斗，填平东海不扬波！'
+          );
+        }
+      };
+      //#region 改变指向
+      //   var sonObj = baseObj; //改变了地址的指向
+      //#endregion
+
+      //#region 浅拷贝
+      var sonObj = {};
+      for (var key in baseObj) {
+        sonObj[key] = baseObj[key];
+      }
+      //#endregion
+      console.log(sonObj);
+
+      //#region 浅拷贝构造函数
+      function Person() {}
+      Person.prototype = {
+        constructor: Person,
+        name: '金世遗',
+        nickname: '毒手疯丐',
+        weapons: '拐剑',
+        say: function() {
+          console.log('剑拐纵横来复去，昂头天外自高歌！');
+        }
+      };
+      var per = {};
+      for (var key in Person.prototype) {
+        per[key] = Person.prototype[key];
+      }
+      console.dir(per);
+      per.say();
+      //#endregion
+    </script>
+  </body>
+</html>

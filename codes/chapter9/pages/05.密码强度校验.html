@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style type="text/css">
+      #pwdLength {
+        padding-top: 5px;
+      }
+      #pwdLength span {
+        display: none;
+        float: left;
+        height: 14px;
+        line-height: 14px;
+        width: 51px;
+        font-size: 12px;
+        text-align: center;
+        color: white;
+        border-right: 1px solid white;
+      }
+      #txtPwd {
+        width: 320px;
+      }
+      .pwd-msg {
+        width: 320px;
+      }
+      .level-weak {
+        background-color: green;
+      }
+      .level-general {
+        background-color: orange;
+      }
+      .level-strong {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    密码：
+    <input
+      id="txtPwd"
+      onkeyup="return checkPwd()"
+      type="password"
+      maxlength="16"
+      placeholder="字母、数字、特殊符号组成，长度为6-16个字符"
+    /><br />
+    <div id="pwdPrompt">
+      <div id="pwdLength">
+        <span id="levelWeak" class="level-weak">弱</span>
+        <span id="levelGeneral" class="level-general">中</span>
+        <span id="levelStrong" class="level-strong">强</span>
+      </div>
+      <div class="pwd-msg" id="pwdMsg"></div>
+    </div>
+    <script>
+      function my(id) {
+        return document.getElementById(id);
+      }
+      function setDisplayById(id, display) {
+        my(id).style.display = display;
+      }
+      //数字、字母或符号其中的一种
+      var reg1 = /(^\d{6,}$)|(^[a-zA-Z]{6,}$)|(^[^a-zA-Z0-9]{6,}$)/;
+      //数字、字母、字符任意组合
+      var reg2 = /\d*\D*((\d+[a-zA-Z]+[^0-9a-zA-Z]+)|(\d+[^0-9a-zA-Z]+[a-zA-Z]+)|([a-zA-Z]+\d+[^0-9a-zA-Z]+)|([a-zA-Z]+[^0-9a-zA-Z]+\d+)|([^0-9a-zA-Z]+[a-zA-Z]+\d+)|([^0-9a-zA-Z]+\d+[a-zA-Z]+))\d*\D*/;
+      function checkPwd() {
+        var pwd = my('txtPwd').value;
+        if (pwd.length < 6) {
+          my('pwdMsg').innerHTML = '密码长度不能小于6位';
+          setDisplayById('pwdMsg', 'block');
+          setDisplayById('levelWeak', 'none');
+          setDisplayById('levelGeneral', 'none');
+          setDisplayById('levelStrong', 'none');
+          return false;
+        } else {
+          setDisplayById('pwdMsg', 'none');
+          setDisplayById('pwdLength', 'block');
+          if (reg1.test(pwd)) {
+            //第一种
+            setDisplayById('levelWeak', 'block');
+            setDisplayById('levelGeneral', 'none');
+            setDisplayById('levelStrong', 'none');
+            return true;
+          } else if (!reg2.test(pwd)) {
+            //第二种
+            setDisplayById('levelWeak', 'block');
+            setDisplayById('levelGeneral', 'block');
+            setDisplayById('levelStrong', 'none');
+            return true;
+          } else {
+            //第三种
+            setDisplayById('levelWeak', 'block');
+            setDisplayById('levelGeneral', 'block');
+            setDisplayById('levelStrong', 'block');
+            return true;
+          }
+          return true;
+        }
+      }
+    </script>
+  </body>
+</html>

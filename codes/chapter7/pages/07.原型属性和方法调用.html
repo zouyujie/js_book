@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 忍者
+      function Ninja(name, age) {
+        this.name = name;
+        this.age = age;
+        this.eat = function() {
+          console.log('吃红色辣椒丸');
+        };
+      }
+      Ninja.prototype = {
+        //手动修改构造器的指向
+        constructor: Ninja,
+        skill: '体术',
+        fight: function() {
+          console.log('扔手里剑');
+        },
+        eat: () => {
+          console.log('吃一乐拉面');
+        }
+      };
+      var dingci = new Ninja('秋道丁次', 21);
+      dingci.eat();
+      dingci.fight();
+    </script>
+  </body>
+</html>

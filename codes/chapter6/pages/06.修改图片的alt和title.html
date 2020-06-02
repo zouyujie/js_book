@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="修改alt和title" id="btn" />
+    <img src="../images/beauty.jpg" alt="" id="img" />
+    <script>
+        //根据id获取按钮
+        var btnObj = document.getElementById("btn");
+        //为按钮注册点击事件，添加事件处理函数
+        btnObj.onclick = function () {
+            //返回图片对象
+            var imgObj = document.getElementById("img");
+            imgObj.alt = "找不到对象";
+            imgObj.title = "书中自有颜如玉";
+        };
+    </script>
+</body>
+
+</html>

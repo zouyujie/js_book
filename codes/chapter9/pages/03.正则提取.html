@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //1.提取email地址
+      var str =
+        '《Vue.js 2.x实践指南》的作者：邹琼俊，邮箱：zouyujie@126.com、1430642398@qq.com';
+      var arr = str.match(/\w+@\w+\.\w+(\.\w+)?/g);
+      console.log(arr);
+      var rex = /\w+@\w+\.\w+(\.\w+)?/g;
+      var arr2 = rex.exec(str);
+      console.log(arr2);
+
+      // 2. 分组提取----提取作者和日期
+      var dateStr = '邹琼俊编写的《Vue.js 2.x实践指南》将于2020-04-01出版';
+      // 正则表达式中的()作为分组来使用，获取分组匹配到的结果用Regex.$1、Regex.$2 Regex.$3....来获取
+      var reg = /(.+)编写.+(\d{4}-\d{1,2}-\d{1,2})/g;
+      if (reg.test(dateStr)) {
+        // console.dir(RegExp);
+        console.log('作者：' + RegExp.$1);
+        console.log('出版日期：' + RegExp.$2);
+      }
+    </script>
+  </body>
+</html>

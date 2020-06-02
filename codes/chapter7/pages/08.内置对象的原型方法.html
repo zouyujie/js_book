@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = new Array(1, 2, 3, 4, 5);
+      arr.join('-');
+      console.dir(arr);
+
+      var str = new String('暖阳下，我迎芬芳，是谁家的姑娘');
+      //   console.dir(str);
+      console.log(str.toString());
+      String.prototype.addChar = function(starChar, endChar) {
+        return starChar + this + endChar;
+      };
+      console.log(str.addChar('[', ']'));
+    </script>
+  </body>
+</html>

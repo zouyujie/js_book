@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    console.log(say);
+    var say = 1;
+    console.log(say);
+    function say() {
+        console.log('函数调用')
+    }
+
+    console.log(say);
+    //------------预解析后------------
+    var say;
+    function say() {
+        console.log('函数调用')
+    }
+    console.log(say);
+    say = 1;
+    console.log(say);//1
+    console.log(say);//1
+</script>
+
+</html>

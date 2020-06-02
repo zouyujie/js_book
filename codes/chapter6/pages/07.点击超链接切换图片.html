@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a id="link" href="../images/beauty-max.jpg"><img src="../images/beauty.jpg" alt="" id="img"></a>
+    <script>
+        //点击图片标签,设置图片标签的src路径为超链接中大图的路径
+        document.getElementById("img").onclick = function () {
+            this.src = document.getElementById("link").href;
+            return false;
+        };
+    </script>
+</body>
+
+</html>

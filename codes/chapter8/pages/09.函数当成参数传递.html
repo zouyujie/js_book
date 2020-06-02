@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function say(fn) {
+        fn(); //此时fn当成是一个函数来使用的
+      }
+      //命名函数
+      function baseSay() {
+        console.log('我就是我');
+      }
+      say(baseSay);
+      say(function() {
+        console.log('匿名函数');
+      });
+
+      function show(fn) {
+        setInterval(function() {
+          fn();
+        }, 1000);
+      }
+      // 匿名函数作为参数传入
+      show(function() {
+        console.log(
+          '以为拂高天之云翳，仰日月之光辉，拯民于水火之中，措天下于衽席之上'
+        );
+      });
+    </script>
+  </body>
+</html>

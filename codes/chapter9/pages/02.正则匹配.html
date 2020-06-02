@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var str = '邹琼俊，2011年毕业湖南第一师范';
+      var patt1 = new RegExp('湖南第一师范');
+      var result = patt1.test(str);
+      document.write('匹配结果： ' + result); //匹配结果： true
+    </script>
+  </body>
+</html>

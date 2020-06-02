@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" value="须佐能乎" id="txt" />
+    <input type="button" value="获取文本值" id="btnGet" />
+    <input type="button" value="设置文本值" id="btnSet" />
+    <script>
+        //获取和设置文本框的值
+        var txt = document.getElementById('txt');
+        document.getElementById('btnGet').onclick = function () {
+            console.log(txt.value);
+        }
+        document.getElementById('btnSet').onclick = function () {
+            txt.value = '万花筒写轮眼';
+        }
+    </script>
+</body>
+
+</html>

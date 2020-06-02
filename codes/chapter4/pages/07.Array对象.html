@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 创建了一个空数组
+    var arr1 = new Array();
+    // 创建了一个数组，里面存放了3个字符串
+    var arr2 = new Array('刘玄德', '关云长', '张翼德');
+    // 创建了一个数组，里面存放了4个数字
+    var arr3 = new Array(1, 2, 3, 4);
+
+    var arr = [1, 2, 3, 4];
+
+    // 方式1 推荐 
+    arr = [];
+    // 方式2 
+    arr.length = 0;
+    // 方式3
+    arr.splice(0, arr.length);
+
+    var obj = [];
+    console.log(obj instanceof Array);//true
+    console.log(Array.isArray(obj));//true
+
+    var arr4 = ['段誉', '虚竹'];
+    console.log(arr4.toString());//段誉,虚竹
+    console.log(arr4.valueOf()); // ["段誉", "虚竹"]
+
+    var arr5 = [];
+    arr5.push('「恶贯满盈」段延庆');
+    arr5.push('「无恶不做」叶二娘');
+    console.log(arr5.pop(), arr5.length);//「无恶不做」叶二娘 1
+
+    var arr6 = [];
+    arr6.unshift('「恶贯满盈」段延庆');
+    arr6.unshift('「无恶不做」叶二娘');
+    console.log('arr6 :', arr6);//["「无恶不做」叶二娘", "「恶贯满盈」段延庆"]
+    console.log(arr6.shift(), arr6.length);//「无恶不做」叶二娘 1
+
+    var arr7 = [21, 11, 7, 2, 17];
+    console.log(arr7.sort()); //[11, 17, 2, 21, 7]
+
+    var arr8 = [21, 11, 7, 2, 17];
+    console.log(arr8.reverse()); //[17, 2, 7, 11, 21]
+
+    console.log('==========================');
+    var arr9 = [1, 3, 5];
+    console.log('arr9 :', arr9.concat(7, 9)); //[1, 3, 5, 7, 9]
+    console.log(arr9.slice(1)); //[3, 5]
+    console.log(arr9);//[1, 3, 5]
+
+    var arr10 = ['三国演义', '水浒传', '红楼梦'];
+    arr10.splice(2, 0, "西游记");
+    console.log(arr10); //["三国演义", "水浒传", "西游记", "红楼梦"]
+
+    var index = arr10.indexOf("红楼梦");
+    console.log(index); //3
+
+    var arr11 = ['半', '醒', '半', '醉', '日', '复', '日'];
+    var index1 = arr11.indexOf("半");
+    console.log(index1);//0
+
+    var arr12 = [18, 19, 20];
+    console.log(arr12.every(x => x > 10));//true
+
+    console.log(arr12.filter(x => x > 18));//[19, 20]
+
+    var arr13 = ["三国演义", "水浒传", "西游记", "红楼梦"];
+    arr13.forEach(n => {
+        console.log('[' + n + ']');
+    });
+
+    //["[三国演义]", "[水浒传]", "[西游记]", "[红楼梦]"]
+    console.log(arr13.map(n => {
+        return '[' + n + ']'
+    }));
+    console.log(arr13);
+
+    console.log(arr13.some(n => n == '三国演义'));//true
+
+    console.log(arr13.join(','));//三国演义,水浒传,西游记,红楼梦
+
+</script>
+
+</html>
