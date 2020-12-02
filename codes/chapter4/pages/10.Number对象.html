@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // Number.isNaN(value)
+    console.log(Number.isNaN(NaN)); // true // NaN !== NaN
+    console.log(Number.isNaN(Number("1"))); // false
+    console.log(Number.isNaN(Number("zouyujie"))); // true
+
+    // Number.parseFloat(string)
+    console.log(Number.parseFloat(NaN)); // NaN
+    console.log(Number.parseFloat("11.27")); // 11.27 
+    console.log(Number.parseFloat(Infinity)); // Infinity 
+    console.log(Number.parseFloat("11")); // 11 
+
+    // Number.parseInt(string[, radix])
+    console.log(Number.parseInt(NaN)); // NaN
+    console.log(Number.parseInt("11.27")); // 11
+    console.log(Number.parseInt("11")); // 11
+    console.log(Number.parseInt("11", 2)); // 3
+    console.log(Number.parseInt("11", 3)); // 4
+    console.log(Number.parseInt("11", 8)); // 9
+    console.log(Number.parseInt("11", 16)); // 17
+    console.log(Number.parseInt(Infinity)); // NaN 
+
+    // Number.prototype.toFixed()
+    var num = new Number(11.27);
+    console.log(num.toFixed(1)); //11.3
+    console.log(num.toFixed(5)); //11.27000
+  </script>
+</body>
+
+</html>
