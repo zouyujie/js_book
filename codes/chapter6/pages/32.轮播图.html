@@ -165,10 +165,10 @@
         //自动播放
         var timeId = setInterval(clickHandle, 1000);
 
-        //鼠标进入到box的div显示左右焦点的div
+        //鼠标进入到id为box的div上时，显示左右焦点的div
         box.onmouseover = function () {
             arr.style.display = "block";
-            //鼠标进入清除之前的定时器
+            //鼠标移入box这个div时，清除之前的自动播放定时器
             clearInterval(timeId);
         };
         //鼠标离开到box的div隐藏左右焦点的div
